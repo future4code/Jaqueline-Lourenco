@@ -1,15 +1,13 @@
-console.log ("Hello")
-console.log("Segunda")
-console.log(2)
-//console.log("AAAAA")
-/*
-const nome = prompt("Qual é seu nome, usuarioquerido")
-console.log(nome)
-*/
-let a = 10
-let b = 10
+//2
 
-console.log(b)
+const primeiroNumber = 30
+const segundoNumber = 50
 
-b = 5
-console.log(a, b)
+
+console.log("o primeiro number é igual ao segundo number?", primeiroNumber === segundoNumber)
+
+console.log("o segundo number é diferente do primeiro number", primeiroNumber !== segundoNumber)
+
+console.log("o primeiro number é maior que o segundo number?", primeiroNumber > segundoNumber)
+
+console.log("o primeiro number é menor que o segundo number", primeiro < segundoNumber)
