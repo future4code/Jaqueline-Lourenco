@@ -10,4 +10,5 @@ console.log("o segundo number é diferente do primeiro number", primeiroNumber !
 
 console.log("o primeiro number é maior que o segundo number?", primeiroNumber > segundoNumber)
 
-console.log("o primeiro number é menor que o segundo number", primeiro < segundoNumber)
+console.log("o primeiro number é menor que o segundo number", primeiroNumber < segundoNumber)
+
