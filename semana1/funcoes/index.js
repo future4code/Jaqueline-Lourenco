@@ -79,7 +79,7 @@ Respostas:
 */
 //a)
 
-console.log("Eu sou Jaqueline, tenho 26, moro em Hortolândia e sou estudante")
+//console.log("Eu sou Jaqueline, tenho 26, moro em Hortolândia e sou estudante")
 
 //b)
 /*
@@ -158,28 +158,28 @@ function imprimeMensagem() {
     ```
 
 */
-let numPrimeiro = prompt("Insira um número")
-let numSegundo = prompt("Insira segundo número")
+let numPrimeiro = Number(prompt("Insira um número"))
+let numSegundo = Number(prompt("Insira segundo número"))
 
 function som(numPrimeiro, numSegundo){
     const soma = numPrimeiro + numSegundo
-    console.log(soma)
+   
     return soma
 }
 function sub(numPrimeiro, numSegundo) {
     const subitracao = numPrimeiro - numSegundo
-    console.log(subitracao)
+    
     return subitracao
 
 }
 function mult(numPrimeiro, numSegundo){
     const multiplicação = numPrimeiro * numSegundo
-    console.log(multiplicação)
+    
     return multiplicação
 }
 function divi(numPrimeiro, numSegundo){
     const divisão = numPrimeiro / numSegundo
-    console.log(divisão)
+    
     return divisão
 }
 
@@ -189,4 +189,13 @@ function result(numPrimeiro, numSegundo){
     const vezes = mult(numPrimeiro, numSegundo)
     const dividido = divi(numPrimeiro, numSegundo)
 
+    const resultoFinal = `Os resultados são: 
+    Soma: ${numPrimeiro} + ${numSegundo} = ${adicao}
+    Subtração: ${numPrimeiro} - ${numSegundo} = ${menos}
+    Multiplicação: ${numPrimeiro} x ${numSegundo} = ${vezes}
+    Divisão: ${numPrimeiro} / ${numSegundo} = ${dividido}`
+
+    return resultoFinal
 }
+   
+console.log(result(numPrimeiro, numSegundo))
