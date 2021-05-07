@@ -79,10 +79,10 @@ Respostas:
 */
 //a)
 
-//console.log("Eu sou Jaqueline, tenho 26, moro em Hortolândia e sou estudante")
+console.log("Eu sou Jaqueline, tenho 26, moro em Hortolândia e sou estudante")
 
 //b)
-/*
+
 let nome = prompt("Insira seu nome")
 let idade = Number(prompt("Insira sua idade"))
 let cidade = prompt("Insira sua cidade")
@@ -91,7 +91,7 @@ let profissao = prompt("insira sua profissão")
 const fraseComTemplateString = `Eu sou a ${nome} tenho ${idade} anos moro em ${cidade} e sou ${profissao}`
 
 console.log(fraseComTemplateString)
-*/
+
 /*
 2. Escreva as funções explicadas abaixo:
 
@@ -102,10 +102,10 @@ console.log(fraseComTemplateString)
     c) Escreva uma função que receba um número e devolva um booleano indicando se ele é par ou não
 
     d) Faça uma função que recebe uma mensagem (`string`) como parâmetro e imprima o tamanho dessa mensagem, juntamente com uma versão dela em letras maiúsculas.
-*/
 
+*/
 //a)
-/*
+
 function somaDoisNumeros(primeiroNumero, segundoNumero) {
     const somaDoisNumeros = primeiroNumero + segundoNumero
     return somaDoisNumeros
@@ -114,18 +114,18 @@ let primeiroNumero = Number(prompt("Insira primeiro número"))
 let segundoNumero = Number(prompt("Insira segundo número"))
 const soma = somaDoisNumeros(primeiroNumero, segundoNumero)
 console.log(soma)
-*/
+
 //b)
-/*
+
 function comparaNumeros(primeiroNumero, segundoNumero) {
     const maiorIgual = primeiroNumero >= segundoNumero
     return maiorIgual
 }
 const resultado = comparaNumeros(primeiroNumero, segundoNumero)
 console.log(resultado)
-*/
+
 //c)
-/*
+
 function checkParedade(primeiroNumero) {
     const ePar = primeiroNumero % 2 === 0
     console.log(ePar)
@@ -133,17 +133,22 @@ function checkParedade(primeiroNumero) {
 }
    const resultadoFunc = checkParedade(primeiroNumero)
    console.log(resultadoFunc)
-*/
+
 //d)
-/*
-function imprimeMensagem() {
-    console.log("Olá, sou a Jaqueline e tenho aprendido muito com a labenu obrigada!")
-    const frase = imprimeMensagem()
-    return frase
+    
+    
+    function printOutMsg() {
+        let msg = prompt("Insira uma frase")
+        let toUpperMsg = msg.toUpperCase()
+        let lenghtMsg = msg.length.toString()
+
+        console.log (`Tamanho da mensagem: ${lenghtMsg} caracter(es) Texto em caixa alta: ${toUpperMsg}`)
+    
 }
-    const resultadoFra = imprimeMensagem()
-    console.log(resultadoFra)
-*/
+    printOutMsg()
+    
+    
+
 
 /*
 
@@ -158,6 +163,7 @@ function imprimeMensagem() {
     ```
 
 */
+
 let numPrimeiro = Number(prompt("Insira um número"))
 let numSegundo = Number(prompt("Insira segundo número"))
 
@@ -199,3 +205,4 @@ function result(numPrimeiro, numSegundo){
 }
    
 console.log(result(numPrimeiro, numSegundo))
+
