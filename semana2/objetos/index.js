@@ -102,7 +102,7 @@ de três apelidos. Depois, chame a função feita no item anterior passando como
 */
 
 //a)
-/*
+
 const people = {
     name: "Emanuelly Eduarda", 
     nicknames: ["Manu", "Dudu", "Duda"]
@@ -112,9 +112,9 @@ const people = {
  const nicknamesUser = people.nicknames
  console.log (`Eu sou ${nameUser}, mas pode me chamar de: ${nicknamesUser[0]}, ${nicknamesUser[1]} ou ${nicknamesUser[2]}`)
 
-*/
+
 //b)
-/*
+
 const people = {
     name: "Emanuelly Eduarda", 
     nicknames: ["Manu", "Dudu", "Duda"]
@@ -134,7 +134,7 @@ const people = {
     }
   const newList = addInfo(people)
   console.log(`Eu sou ${newList.name}, mas pode também de: ${newList.peopleNicknames}`)
-*/
+
 /*
 2. Resolva os passos a seguir: 
 
@@ -161,7 +161,8 @@ const people = {
         // Retorno: ["Bruno", 5, 23, "Instrutor", 9]
         ```
 */
-//a)
+//a);b)
+
 const people = {
     name: "Emanuelly", 
     age: 06,
@@ -183,3 +184,44 @@ const people = {
 
    console.log(addInfo(people))
    console.log(addInfo(people2))
+   
+  //3. Resolva os passos a seguir: 
+/*
+  a) Crie uma variável de escopo global que guarde um `array` vazio chamada `carrinho`
+
+  b) Crie três novos objetos que representem frutas de um sacolão. Eles devem ter as seguintes propriedades: nome 
+  (`string`) e disponibilidade (`boolean` - devem começar como `true`)
+
+  c) Crie uma função que **receba** um objeto fruta por **parâmetro** e coloque-a dentro do array de `carrinho`. 
+  Invoque essa função passando os três objetos criados. 
+
+  d) Imprima a variável `carrinho` e garanta que ela agora seja um **array preenchido com três objetos.** 
+*/
+//a);b);c);d)
+const cart = []
+
+const list = {
+  name: "mango",
+  availability: true
+}
+
+const list2 = {
+  name: "strawberry",
+  availability: true
+}
+
+const list3 = {
+  name: "banana",
+  availability: true
+}
+
+function addFruitCart(fruit){
+  cart.push(fruit)
+
+}
+
+addFruitCart(list.name + (`, ${list.availability}`));
+addFruitCart(list2.name + (`, ${list2.availability}`)),
+addFruitCart(list3.name + (`, ${list3.availability} `))
+
+console.log(cart)
