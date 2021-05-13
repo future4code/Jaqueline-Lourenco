@@ -163,13 +163,14 @@ function numberDiv(arrayDiv){
 function printLargestSmaller(number){
     let arrayNumber = []
     let largest = 0
-    let smaller = 0
+    let smaller = Infinity
 
     for(let i = 0; i < number.length; i++){
-        if( number[i] >= largest ){
+
+        if( number[i] > largest ){
             largest = number[i]
         
-        } if ( number[i] < smaller ){
+        } else if ( number[i] < smaller ){
             smaller =  number[i]
         
         }
@@ -178,20 +179,4 @@ function printLargestSmaller(number){
     console.log(`O maior número é ${largest} e o menor número é ${smaller}`)
 }
     const resultArray = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-    printLargestSmaller(resultArray) 
-   // biggerSmaller([80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55])
-    //console.log(`O maior número é ${bigger} e o menor número é ${smaller}`)
-
-/*var n = [1, 2, 3];
-
-
-numero=n(i)
-
-for (i = 0; i < n.length; i++) { 
-    if (n(i) >= numero) {
-         maior = n(i); }
-    if (n(i) <= numero) { 
-        menor = n(i); }
-}
-alert( "O maior número é: " + maior + " e o menor é: " + menor);
-*/
+    printLargestSmaller(resultArray)
