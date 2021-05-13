@@ -72,7 +72,7 @@ que quantidadeTotal que é 4 linha a ser vazia vai ser preenchida, 0 + 00 + 000 
     c) Por fim, imprima o array com os nomes dos bichinhos no console
 */
 
- let pet = Number(prompt("Quantos bixinhos de estimação você tem?"))
+/*  let pet = Number(prompt("Quantos bixinhos de estimação você tem?"))
     let i = 0
     if (i === pet) {
       console.log("Que pena! Você pode adotar um pet!")
@@ -90,7 +90,7 @@ que quantidadeTotal que é 4 linha a ser vazia vai ser preenchida, 0 + 00 + 000 
         }
         console.log(bugName)
     }
-
+ */
 /*
 2. Considere que você tenha acesso a um `array`  (chamado de 'array original') que é composto somente de números. 
 Baseando-se nisso, crie uma função para cada um dos itens abaixo, realizando as operações pedidas:
@@ -110,56 +110,88 @@ Baseando-se nisso, crie uma função para cada um dos itens abaixo, realizando a
    
 */
 //a)
- function arrayOrigin(array){
+ function printArray (){
+    const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
     console.log(array) 
 }
+ printArray() 
 
 //b)
-   function numberDiv(array){
-    let array2 = []
+function numberDiv(arrayDiv){
+    let arrayListDiv = []
     let i = 0
-    while (i < array[i]){
-        let number = array[i] / 10
-        array2.push(number)
+    while (i < arrayDiv[i]){
+        let number = arrayDiv[i] / 10
+        arrayListDiv.push(number)
         i++
     }
-    console.log(array2)
+    console.log(arrayListDiv)
   }    
     const age = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
     numberDiv(age)
  
 
 //c)
-   function evenNumber (array){
-       let array3 = []
-       let i = 0
-       while (i < array[i]){
-           let numberEven = array[i] % 2 === 0  
-           numberEven.push(array3)
-           i++
-       }
-    console.log(array3)
+ function evenNumber (arrayEven){
+       const listArray = []
+       for (let i = 0; i < arrayEven.length; i++ ){
+           if (arrayEven[i]  % 2 === 0)
+           listArray.push(arrayEven[i])
+        
+        }
+        console.log(listArray)
     }
+     const listArray = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+     evenNumber(listArray)
+
+    
 
 //d)
-    function printMessage(array){
-    const newArray = []
-    for(let i = 0; i < array.length; i++){
-        let frase = `O elemento do index ${i} é: ${array[i]}`
-        newArray.push(frase)
+ function printMessage(number){
+        const messageList = []
+        for(let i = 0; i < number.length; i++){
+            let message = `O elemento do index ${i} é: ${number[i]}`
+            console.log(message)
+            messageList.push(message)
+        }
+    
     }
-    console.log(newArray)
-}
+     const newMessage = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+     printMessage(newMessage)
 
 //e)
-function maxAndMinNumero(array){
-    let max = -2000000
-    let min = 2000000
-    for(let i = 0; i < array.length; i++){
-        if( array[i] > max){
-            max = array[i]
-        }if( array[i] < min){
-            min = array[i]
+function printLargestSmaller(number){
+    let arrayNumber = []
+    let largest = 0
+    let smaller = 0
+
+    for(let i = 0; i < number.length; i++){
+        if( number[i] >= largest ){
+            largest = number[i]
+        
+        } if ( number[i] < smaller ){
+            smaller =  number[i]
+        
         }
+        
     }
-    console.log(`O menor número é ${min} e o maior número é ${max}`)
+    console.log(`O maior número é ${largest} e o menor número é ${smaller}`)
+}
+    const resultArray = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+    printLargestSmaller(resultArray) 
+   // biggerSmaller([80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55])
+    //console.log(`O maior número é ${bigger} e o menor número é ${smaller}`)
+
+/*var n = [1, 2, 3];
+
+
+numero=n(i)
+
+for (i = 0; i < n.length; i++) { 
+    if (n(i) >= numero) {
+         maior = n(i); }
+    if (n(i) <= numero) { 
+        menor = n(i); }
+}
+alert( "O maior número é: " + maior + " e o menor é: " + menor);
+*/
