@@ -191,55 +191,45 @@ const products = [
     { name: "Sabão em Pó Ypê", category: "Limpeza", price: 10.80 }
  ]
 
- const listItemName = products.map((produto) => {
-    return produto.name
+ const listItemName = products.map((produt) => {
+    return produt.name
  })
 
  console.log(listItemName)
 
 //b)
 
-const productsDiscount = [
-    { name: "Alface Lavada", category: "Hortifruti", price: 2.5 },
-    { name: "Guaraná 2l", category: "Bebidas", price: 7.8 },
-    { name: "Veja Multiuso", category: "Limpeza", price: 12.6 },
-    { name: "Dúzia de Banana", category: "Hortifruti", price: 5.7 },
-    { name: "Leite", category: "Bebidas", price: 2.99 },
-    { name: "Cândida", category: "Limpeza", price: 3.30 },
-    { name: "Detergente Ypê", category: "Limpeza", price: 2.2 },
-    { name: "Vinho Tinto", category: "Bebidas", price: 55 },
-    { name: "Berinjela kg", category: "Hortifruti", price: 8.99 },
-    { name: "Sabão em Pó Ypê", category: "Limpeza", price: 10.80 }
- ]
-
-const itemDiscount = productsDiscount.map((produto, index, array)=>{
- let discount = produto.price * 0.05
- produto.price = produto.price - discount
-
- return {
-     name: produto.name,
-     price: produto.price.toFixed(2)
+const itemDiscount = products.map((produt)=>{
+return {name: produt.name, price: (produt.price * 0.95).toFixed(2)
  }
 })
    console.log(itemDiscount)
 
 //c)
 
-const product = [
-    { name: "Alface Lavada", category: "Hortifruti", price: 2.5 },
-    { name: "Guaraná 2l", category: "Bebidas", price: 7.8 },
-    { name: "Veja Multiuso", category: "Limpeza", price: 12.6 },
-    { name: "Dúzia de Banana", category: "Hortifruti", price: 5.7 },
-    { name: "Leite", category: "Bebidas", price: 2.99 },
-    { name: "Cândida", category: "Limpeza", price: 3.30 },
-    { name: "Detergente Ypê", category: "Limpeza", price: 2.2 },
-    { name: "Vinho Tinto", category: "Bebidas", price: 55 },
-    { name: "Berinjela kg", category: "Hortifruti", price: 8.99 },
-    { name: "Sabão em Pó Ypê", category: "Limpeza", price: 10.80 }
- ]
-
- const objectArray = product.filter((produto) => {
-    let object = produto.name === "Ypê"
-     return object
+ const objectArray = products.filter((produt)=>{
+    return produt.category === "Bebidas"
+     
  })
     console.log(objectArray)
+
+//d)
+
+ const productsYpe = products.filter((produt)=>{
+  return produt.name.includes("Ypê")
+  
+})
+console.log(productsYpe)
+
+//e)
+
+const sellsYpe = productsYpe.map((produt)=>{
+    return `Compre ${produt.name} por ${produt.price}`
+})
+  console.log(sellsYpe)
+  
+  
+
+
+
+     
