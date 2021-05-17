@@ -2,28 +2,18 @@
 
 function inverteArray(array) {
   // implemente sua lógica aqui
-  const inverter = [13, 12, 41, 15, 10, 16, 23, 8, 0]
-  //console.log(inverteArray(inverter[13,12,41,15,10,16,23,8,0]))
-  return inverter
 }
-console.log(inverteArray([0, 8, 23, 16, 10, 15, 41, 12, 13]))
 
 //Exercício 2
 
 function retornaNumerosParesElevadosADois (array) {
    // implemente sua lógica aqui
-let numberPar = array((numero) =>{
-   numberPar = numero % 2 === 0
-let numberParElevado = numberPar * numberPar
-return numberParElevado
+}
 
-})
-retornaNumerosParesElevadosADois([1, 2, 3, 4, 5, 6])
 //Exercício 3
 
 function retornaNumerosPares (array) {
    // implemente sua lógica aqui
-
 }
 
 //Exercício 4
