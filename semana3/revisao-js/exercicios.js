@@ -57,13 +57,16 @@ function retornaMaiorNumero(array) {
  return maiorNumero
 }
 const numberMaiorArray = retornaMaiorNumero([101, 20, 40, 70, 130, 26, 6])
-console.log('O maior número do Array é:', numeroMaiorArray)
+console.log('O maior número do Array é:', numberMaiorArray)
 
 //Exercício 5
 
 function retornaQuantidadeElementos (array) {
    // implemente sua lógica aqui
+   return array.length 
 }
+const quantidadeArray = retornaQuantidadeElementos(['Perâ','Uva','Maçã','Banana'])
+console.log(`Essa lista de Array tem : ${quantidadeArray} elementos`)
 
 //Exercício 6
 
