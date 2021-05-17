@@ -72,6 +72,19 @@ console.log(`Essa lista de Array tem : ${quantidadeArray} elementos`)
 
 function retornaExpressoesBooleanas() {
    // implemente sua lógica aqui
+/* const booleano1 = true
+   const booleano2 = false
+   const booleano3 = !booleano2 
+   const booleano4 = !booleano3
+   let condicao1 = booleano1 && booleano2 && !booleano4
+   let condicao2 = (booleano1 && booleano2) || !booleano3
+   let condicao3 = (booleano2 || booleano3) && (booleano4 || booleano1)
+   let condicao4 = !(booleano2 && booleano3) || !(booleano1 && booleano3)
+   let condicao5 = !(booleano1) && !(booleano3) || (!booleano4 && booleano3 && booleano3)
+
+   let condicaoFinal = (`${condicao1}, ${condicao2}, ${condicao3}, ${condicao4}, ${condicao5}`)
+   console.log(condicaoFinal) */
+   return [false,false,true,true,true]
 }
 
 //Exercício 7
