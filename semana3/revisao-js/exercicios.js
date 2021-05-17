@@ -2,12 +2,18 @@
 
 function inverteArray(array) {
   // implemente sua lógica aqui
+  let arrayInvertido = []
+  for(let i=array.length - 1; i>=0; i--){
+     arrayInvertido.push(array[i])
+  }
+  return arrayInvertido
 }
 
 //Exercício 2
 
 function retornaNumerosParesElevadosADois (array) {
    // implemente sua lógica aqui
+   
 }
 
 //Exercício 3
