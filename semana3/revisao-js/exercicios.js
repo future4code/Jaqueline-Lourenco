@@ -9,12 +9,25 @@ function inverteArray(array) {
   return arrayInvertido
 }
 
+const arrayModificado = inverteArray([0, 8, 23, 16, 10, 15, 41, 12, 13])
+console.log(arrayModificado)
+
+
 //Exercício 2
 
 function retornaNumerosParesElevadosADois (array) {
    // implemente sua lógica aqui
-   
+   let arrayPar = []
+   for (let i=0; i<array.length; i++){
+      if(array[i] % 2 === 0 ){
+         arrayPar.push(array[i] * array[i])
+      }
+   }
+ return arrayPar
 }
+const arrayElevadoPar = retornaNumerosParesElevadosADois([1, 2, 3, 4, 5, 6])
+console.log(arrayElevadoPar)
+
 
 //Exercício 3
 
