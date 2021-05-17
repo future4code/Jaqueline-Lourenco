@@ -48,7 +48,16 @@ console.log(newArrayPar)
 
 function retornaMaiorNumero(array) {
    // implemente sua lógica aqui
+   let maiorNumero = 0 
+   for (let i = 0; i<array.length; i++){
+   if (array[i] > maiorNumero){
+    maiorNumero = array[i]
+   }
+ }
+ return maiorNumero
 }
+const numberMaiorArray = retornaMaiorNumero([101, 20, 40, 70, 130, 26, 6])
+console.log('O maior número do Array é:', numeroMaiorArray)
 
 //Exercício 5
 
