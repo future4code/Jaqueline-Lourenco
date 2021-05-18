@@ -91,6 +91,14 @@ function retornaExpressoesBooleanas() {
 
 function retornaNNumerosPares(n) {
    // implemente sua lógica aqui
+   let novoArrayPar = []
+   for(let number = 0; novoArrayPar.length < n ; number++){
+      if(number % 2 === 0){
+         novoArrayPar.push(number)
+      }
+   }
+   console.log('Os números pares desse Array são:', novoArrayPar)
+   return novoArrayPar
 }
 
 // Exercício 8
