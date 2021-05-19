@@ -1,0 +1,22 @@
+.texto-nome-loja{
+    color: darkblue;
+    background-color: darkred;
+    text-align: center;
+}
+a{
+    color: darkblue;
+    text-align: center;
+}
+h2{
+    color: darkblue;
+    background-color: darkred;
+    text-align: center;
+}
+body{
+    background-image: url("images/pape-caneta.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+p{
+    text-align: center;
+}

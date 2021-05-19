@@ -1,0 +1,24 @@
+.texto-nome-loja{
+    color: darkblue;
+    background-color: darkred;
+    text-align: center;
+}
+div{
+    color: darkred;
+    text-align: center;
+    
+}
+h2{
+    color: darkblue;
+    background-color: darkred;
+    text-align: center;
+
+}
+#mensagem-auto-estima{
+    color: darkblue;
+    background-color: darkred;
+    text-align: center;
+}
+body{
+    background-color: slategray;
+}
