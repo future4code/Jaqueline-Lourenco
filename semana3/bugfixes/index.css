@@ -21,7 +21,7 @@ input {
     width: 500px;
 }
 
-button:focus {
+button:hover {
     color: white;
 }
 
@@ -46,10 +46,11 @@ div img {
     color: white;
     display: block;
     margin: 150px auto;
+    cursor: pointer;
 }
 
 .botao-amarelo:hover {
-    background-color: #c44f00;
+    background-color: #f3d73b;
 }
 
 .container {
@@ -131,7 +132,8 @@ td button {
     width: 150px;
     height: 40px;
     border-radius: 5px;
-    color: black;
+    color: white;
+    cursor: pointer;
     
 }
 
@@ -142,16 +144,17 @@ td button {
 
 
 #back-button {
-    background-color: white;
+    background-color: rgb(184, 174, 174);
     width: 100px;
     height: 30px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     border-radius: 5px;
     font-size: 10px;
-    color: black;
-    
+    color: rgb(247, 235, 235);
+    cursor: pointer;
 }
 
 #back-button:hover {
-    background-color: #635a3d
+    background-color: #aca19a
+    
 }
