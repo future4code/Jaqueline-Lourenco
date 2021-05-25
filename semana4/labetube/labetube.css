@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Mate SC', serif;
+    font-family: 'Raleway', sans-serif;
+}
+.header-labetube{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    margin-bottom: 100px;
+
+}
+
+.labetube-title , .video-title , {
+    color: black;
+}
+
+.input-button{
+    border: 1px solid grey;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.main-flexbox{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-video{
+    margin: 50px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    height: 308px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.video-title{
+    margin: 20px;
+
+}
