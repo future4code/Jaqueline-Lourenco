@@ -13,7 +13,6 @@ body{
     justify-content: space-around;
 }
 
-/*Estilos do cabeçalho*/
 
 .header-labetube{
     display:flex;
@@ -34,19 +33,19 @@ body{
     margin-left: 0;
 
 }
-/*Estilos de todos titulos da pagina*/
+
 .labetube-title , .video-title{
     color: #050202;
 }
 
-/*Estilos do campo de busca do cabeçalho*/
+
 .search-input{
     border:1px solid grey;
     border-radius: 2px;
     padding: 10px;
 }
 
-/*Estilos do conteudo principal da pagina*/
+
 .main-flexbox{
     height: 582px;
     display: flex;
@@ -76,17 +75,12 @@ body{
     color: grey;
 }
 
-/*Estilos do titulo do video*/
+
 .video-title{
     margin-bottom: 10px;
     margin-left: 15px;
     font-size: 15px;
 }
-
-/* .video-titles-contaien{
-    display: flex;
-    justify-content: column;
-} */
 
 .video-img-hover{
     height: 150px;
