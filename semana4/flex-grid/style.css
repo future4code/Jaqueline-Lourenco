@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Caveat', cursive;
+
+}
+
+.content > .header{
+    height: 60px;
+    background-color: mediumvioletred;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.content > .header > .header-title > .candy-shop-title{
+    color: black;
+}
+
+.content > .header > .header-title > .candy-shop-icon > {
+    background-color: white;
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 50px;
+}
+
+.content > .header > .header-title{
+    display: flex;
+}
+
+.content > .header > div > .logout-button{
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px 10px 20px;
+}
+
+.content > .header > div > .logout-button:hover{
+   cursor: pointer;
+   color: #e6e6e6
+
+}
