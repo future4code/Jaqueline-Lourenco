@@ -9,16 +9,45 @@ import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 
 const Post = (props) => {
-
+  const [like, setLike] = useState(false);
+  const [numberOfLikes, setNumberOfLikes] = useState(0);
+  const [sendComment, setSendComment] = useState(false);
+  const [numberOfComments, setNumberOfComments] = useState(0);
+  const [allComments, setAllComments] = useState([]);
 
   const onClickCurtida = () => {
+    if (like) {
+      setLike(false)
+      setNumberOfLikes(0)
+    } else {
+      setLike(true)
+      setNumberOfLikes(1)
+    }
   };
 
   const onClickComentario = () => {
+    setSendComment(!sendComment)
   };
-
+  
   const enviarComentario = (comentario) => {
+    setNumberOfComments(numberOfComments + 1)
+    const newListOfComments = [...allComments, comentario]
+    setSendComment(false)
+    setAllComments(newListOfComments)
   }
+  const iconeCurtida = like ? iconeCoracaoPreto : iconeCoracaoBranco
+  
+  const commentSection = sendComment ? (
+    <SecaoComentario enviarComentario = {enviarComentario} />
+  ) : (
+    allComments.map((comentario) => {
+      return (
+        <CommentContainer>
+          <p>{comentario}</p>
+        </CommentContainer>
+      )
+    })
+  )
 
   return (
     <PostContainer>
@@ -31,18 +60,18 @@ const Post = (props) => {
 
       <PostFooter>
         <IconeComContador
-          // icone={iconeCurtida}
+          icone={iconeCurtida}
           onClickIcone={onClickCurtida}
-          // valorContador={numeroCurtidas}
+          valorContador={numberOfLikes}
         />
 
         <IconeComContador
           icone={iconeComentario}
           onClickIcone={onClickComentario}
-          // valorContador={numeroComentarios}
+          valorContador={numberOfComments}
         />
       </PostFooter>
-      {/* {caixaDeComentario} */}
+      {commentSection}
     </PostContainer>
   )
 }
