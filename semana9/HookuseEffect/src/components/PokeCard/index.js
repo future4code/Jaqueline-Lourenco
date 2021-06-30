@@ -1,25 +1,32 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 
-export const PokeCard = () => {
-  const [pokemon] = useState("")
+export const PokeCard = (props) => {
+  const [pokemon, setPokemon] = useState({})
  
-getUsers =(pokeName) => {
-    axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
-      .then(response => pokemon
-        // guarda as infos do pokemon no estado
-        (response.data)
-      .catch(err => console.log(err))
-    }
-  useEffect((prevProps) => {
-    (prevProps.pokemon !== pokemon)
-      pegaPokemon(pokemon);
-      getUsers()
-  }, [prevProps])
 
+  useEffect(() => {
+    getPokemon(props.pokemon);
+
+  }, [])
+
+  useEffect(() => {
+    getPokemon(props.pokemon);
+  }, [props.pokemon])
+
+  const getPokemon = (pokeName) => {
+      axios
+        .get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
+        .then((response) => {
+          // guarda as infos do pokemon no estado
+          setPokemon(response.data)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+  }
     return (
-      <div>
+      <div className="container">
         <p>{pokemon.name}</p>
         <p>{pokemon.weight} Kg</p>
         {pokemon.types && <p>{pokemon.types[0].type.name}</p>}
