@@ -1,12 +1,17 @@
 import React, {useState , useEffect} from 'react';
 import axios from 'axios';
-import AstroProfilesCard from '../AstroProfileCard/AstroProfileCard'
-
+import AstroProfileCard from '../AstroProfileCard/AstroProfileCard'
 import { AstroBio } from '../GlobalStyles/AstroStyles';
+
+const headers = {
+    headers: {
+        Authorization: "application/json"
+    }
+}
 
 const AstroProfiles = props => {
 
-    const [ profile, setProfile ] = useState(props.profile)
+    const [profile, setProfile] = useState(props.profile)
 
     useEffect(() => {
         setProfile(props.profile)
@@ -19,7 +24,7 @@ const AstroProfiles = props => {
         }
         axios
         .post(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/jaqueline/choose-person
-        `, body)
+        `, body, headers)
         .then(() => {
             {props.getProfile()}
             setProfile()
@@ -34,9 +39,10 @@ const AstroProfiles = props => {
             id: profile.id,
             choice: false
         }
+        
         axios
         .post(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/jaqueline/choose-person
-        `, body)
+        `, body, headers)
         .then(() => {
             {props.getProfile()}
             setProfile()
@@ -48,7 +54,7 @@ const AstroProfiles = props => {
 
     return (
         
-        profile ? ( <AstroProfilesCard 
+        profile ? ( <AstroProfileCard 
             photo={profile.photo}
             name={profile.name}
             age={profile.age}

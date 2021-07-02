@@ -15,8 +15,8 @@ const AstroProfileCard = (props) => {
                 <AstroBio>{props.bio}</AstroBio>
             </AstroInfoContainer>
             <AstroIconsContainer>
-                <AstroIcons src={LikeIcon} onClick={props.DesLikeProfile} />
-                <AstroIcons src={DesLikeIcon} onClick={props.likeProfile} />
+                <AstroIcons src={LikeIcon} onClick={() => likeAstroProfile(profile.id, true)} />
+                <AstroIcons src={DesLikeIcon} onClick={() => deslikeAstroProfile(profile.id, false)} />
             </AstroIconsContainer>
         </div>
     )

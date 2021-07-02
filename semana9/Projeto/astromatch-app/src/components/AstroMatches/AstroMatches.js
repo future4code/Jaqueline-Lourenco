@@ -11,8 +11,8 @@ const AstroMatches = ()  => {
         .then(response => {
             setLikes(response.data.matches)
         })
-        .catch(error => {
-            alert(error)
+        .catch(err => {
+            alert(err)
         })
     }, [])
 

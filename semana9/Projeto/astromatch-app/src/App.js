@@ -9,7 +9,7 @@ import AstrometcheLogo from './components/assets/astromatchelogo.png'
 
 const App = () => {
   const [page, setPage] = useState('profiles')
-  const [profile, setProfile] = useState([])
+  const [profile, setProfile] = useState()
   
   //change page to match
   const changePage = () => {
@@ -21,8 +21,7 @@ const App = () => {
     }
   } 
 
-  //go to the API and back to profile
-  const getProfiles = () => {
+  const getProfile = () => {
     axios
     .get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/jaqueline/person`)
     .then(response => {
@@ -34,7 +33,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    getProfiles()
+    getProfile()
   }, [])
   
   //To reset the metches list
@@ -42,15 +41,15 @@ const App = () => {
     axios
     .put(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/jaqueline/clear`)
     .then(() =>
-    getProfiles(),
+    getProfile(),
     alert("Metches list reset successfully!"))
-    .catch(error => {
-      alert(error)
+    .catch(err => {
+      alert(err)
     })
   }
 
   //Makes the conditional rendering of profiels to metches
-  const currentPage = page === 'profiles' ? (<AstroProfiles profile={profile} getProfiles={getProfiles} />) : (<AstroMatches />)
+  const currentPage = page === 'profiles' ? (<AstroProfiles profile={profile} getProfiles={getProfile} />) : (<AstroMatches />)
 
   return (
     <AstroHomeContainer>
