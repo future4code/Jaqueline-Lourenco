@@ -1,65 +1,65 @@
-import React, {useState , useEffect} from 'react';
-import axios from 'axios'
-import AstroProfiles from './components/AstroProfiles/AstroProfiles'
-import AstroMatches from './components/AstroMatches/AstroMatches'
-import { AstroHomeContainer , AstroButton , AstroAppIcons , AstroMatcheLogo } from './components/GlobalStyles/AstroStyles';
-import matchesIcon from './components/assets/metchesicon.png'
-import resetIcon from './components/assets/reset.png'
-import AstrometcheLogo from './components/assets/astromatchelogo.png'
+import React, { useState , useEffect } from 'react';
+import axios from 'axios';
 
-const App = () => {
-  const [page, setPage] = useState('profiles')
-  const [profile, setProfile] = useState()
+import AstroProfiles from './components/AstroProfiles/AstroProfilePage'
+import Matches from './components/MatchList/Matches'
+import {HomeContainer , ButtonContainer , IconsApp , Logo} from './styled'
+
+import matches from './assets/metchesicon.png'
+import reset from './assets/reset.png'
+import logo from './assets/astromatchelogo.png'
+
+function App() {
   
-  //change page to match
-  const changePage = () => {
-    if (page === "profiles"){
-      setPage("matches")
-    }
-    else {
-      setPage("profiles")
-    }
-  } 
+  const  [ page, setPage ] = useState('profiles')
 
-  const getProfile = () => {
+  const changePage = () => {
+    if (page === 'profiles') {
+      setPage('matches')
+    } else {
+      setPage('profiles')
+    }
+  }
+  
+  const [ profile, setProfile ] = useState()
+    
+  const getProfile = (props) => {
     axios
     .get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/jaqueline/person`)
     .then(response => {
       setProfile(response.data.profile)
     })
-    .catch (error => {
-      alert(error)
+    .catch (err => {
+      alert(err)
     })
   }
 
   useEffect(() => {
     getProfile()
   }, [])
-  
-  //To reset the metches list
-  const resetMatches = () => {
+
+  const resetProfiles = () => {
     axios
     .put(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/jaqueline/clear`)
     .then(() =>
-    getProfile(),
-    alert("Metches list reset successfully!"))
-    .catch(err => {
+      getProfile(),
+      alert("Lista resetada com sucesso"))
+    .catch(err =>{
       alert(err)
     })
   }
 
-  //Makes the conditional rendering of profiels to metches
-  const currentPage = page === 'profiles' ? (<AstroProfiles profile={profile} getProfiles={getProfile} />) : (<AstroMatches />)
+  const actualPage = page === 'profiles' ? (<AstroProfiles profile={profile} getProfile={getProfile}  /> ) : (<Matches />)
 
   return (
-    <AstroHomeContainer>
-      <AstroButton>
-        <AstroAppIcons src={resetIcon} onClick={resetMatches} />
-        <AstroMatcheLogo src={AstrometcheLogo} />
-        <AstroAppIcons src={matchesIcon} onClick={changePage} />
-        </AstroButton>
-        {currentPage}
-    </AstroHomeContainer>
+      <HomeContainer>
+        <ButtonContainer>
+          <IconsApp src={reset} onClick={resetProfiles} />  
+          <Logo src={logo} />
+          <IconsApp src={matches} onClick={changePage} />
+        </ButtonContainer>  
+        {actualPage}
+      </HomeContainer>
   );
 }
 
