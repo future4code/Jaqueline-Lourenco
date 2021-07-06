@@ -1,10 +1,10 @@
 import React from 'react';
-import HomeTwoToneIcon from '@material-ui/icons/HomeTwoTone';
+import Router from "./Router/Router"
 
 function App() {
   return (
     <div className="App">
-      <HomeTwoToneIcon />
+      <Router />
     </div>
   );
 }

@@ -1,32 +1,28 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom';
 import {GlobalStyled} from '../../styled';
+import {useHistory} from 'react-router-dom';
 import Logo from '../../assets/logo.jpg'
 
-export default function AdmHomePage () {
+export default function ListTrips () {
   const history = useHistory()
   
   const goToHome = () => {
     history.push("/")
   }
-  const goToListTrips = () => {
-    history.push("/list")
+  const goToAdmHome = () => {
+    history.push("/adm")
   }
-  const goToCreateList = () => {
-    history.push("/create")
-  }
-
   return (
     <div>
       <GlobalStyled>
         <img src={Logo}/>
-        Admin Home Page
+        List Trips
         <div>
           <button onClick={goToHome}>Home</button>
-          <button onClick={goToListTrips}>Trips</button>
-          <button onClick={goToCreateList}>Create Trip</button>
-        </div>
+          <button onClick={goToAdmHome}>Login</button>
+        </div>  
       </GlobalStyled>
     </div>
   );
 }
+
