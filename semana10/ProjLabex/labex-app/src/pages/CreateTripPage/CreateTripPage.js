@@ -26,8 +26,6 @@ export default function CreateTrip () {
           <button onClick={goToTripDetail}>Detail Trip</button>
         </div>
       </GlobalStyled>
-      <button>Delete</button>
     </div>
   );
 }
-

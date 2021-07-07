@@ -6,8 +6,8 @@ import Logo from '../../assets/logo.jpg'
 export default function Home () {
   const history = useHistory()
 
-  const goToAdmHome = () => {
-    history.push("/adm")
+  const goToLogin = () => {
+    history.push("/login")
   }
   const goToListTrips = () => {
     history.push("/list")
@@ -19,7 +19,7 @@ export default function Home () {
         <img src={Logo}/>
         Home
         <div>
-          <button onClick={goToAdmHome}>Login</button>
+          <button onClick={goToLogin}>Login</button>
           <button onClick={goToListTrips}>Trips</button>
         </div>
       </GlobalStyled>
