@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import {GlobalStyled} from '../../styled';
+import {GlobalStyled , Input} from '../../styled';
 import {useHistory} from 'react-router-dom';
 import Logo from '../../assets/logo.jpg';
 import axios from 'axios';
-import {Input} from './styled'
 
 export default function Login () {
   const [email, setEmail] = useState("");
@@ -14,10 +13,6 @@ export default function Login () {
   const goToHome = () => {
     history.push("/")
   }
-  const goToListTripsPage = () => {
-    history.push("/list")
-  }
-
   const onChangeEmail = (event) => {
     setEmail(event.target.value)
   }
@@ -32,10 +27,14 @@ export default function Login () {
     }
     axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/jaqueline-lourenco-Molina/login',body)
       .then((response) => {
-        alert("login Successfully:", response.data)
+        alert("login Successfully!")
+        console.log(response.data.token)
+        localStorage.setItem('token', response.data.token )
+        history.push("/adm")
       })
       .catch((error) => {
-        alert("Error try again:", error.response)
+        alert("Error try again")
+        console.log(error.response)
       })
   }
 
@@ -46,18 +45,17 @@ export default function Login () {
         Login
         <div>
           <button onClick={goToHome}>Home</button>
-          <button onClick={goToListTripsPage}>List</button>
         </div>  
       </GlobalStyled>
       <Input>
         <input
-          placeholder="email"
+          placeholder="E-mail"
           type="email"
           value={email}
           onChange={onChangeEmail}
         />
         <input
-          placeholder="password"
+          placeholder="Password"
           type="password"
           value={password}
           onChange={onChangePassword}

@@ -7,7 +7,12 @@ import axios from 'axios';
 
 export default function TripDetails () {
   useEffect(() => {
-    axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/jaqueline-lourenco-Molina/trip/TwKk1Ct96IabkWr0EVm2")
+    const token =localStorage.getItem('token')
+    axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/jaqueline-lourenco-Molina/trip/TwKk1Ct96IabkWr0EVm2", {
+      headers: {
+        auth: token
+      }
+    })
       .then((response) => {
         console.log(response.data)
       }).catch((error) => {
