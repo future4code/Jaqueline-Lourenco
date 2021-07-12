@@ -3,7 +3,6 @@ import {GlobalStyled} from '../../styled';
 import {useHistory} from 'react-router-dom';
 import Logo from '../../assets/logo.jpg'
 import axios from 'axios';
-import TripDetails from '../TripDetailPage/TripDetailsPage';
 import {MapTrip , CardTrip} from './styled'
 
 export default function ListTrips () {

@@ -1,15 +1,22 @@
 import React, {useState} from 'react';
-import {GlobalStyled , Input} from '../../styled';
+import {GlobalStyled, Container } from '../../styled';
 import {useHistory} from 'react-router-dom';
 import Logo from '../../assets/logo.jpg';
 import axios from 'axios';
+import { useForm } from '../../hooks/useForm';
+import { useTripsList } from '../../hooks/useTripsList';
+import {TextField, Button, InputLabel, Select, FormControl, MenuItem } from '@material-ui/core';
 
 export default function ApplicationForm () {
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-  const [applicationText, setApplicationText] = useState("");
-  const [profession, setProfession] = useState("");
-  const [country, setCoutry] = useState("");
+  const trips = useTripsList()
+  const [form, onChangeInput] = useForm({
+    name: '',
+    age: 0,
+    applicationText: '',
+    profession: '',
+    country: '',
+    trip: null
+  })
 
   const history = useHistory()
   
@@ -20,32 +27,17 @@ export default function ApplicationForm () {
     history.push("/list")
   }
 
-  const onChangeName = (event) => {
-    setName(event.target.value)
-  }
-  const onChangeAge = (event) => {
-    setAge(event.target.value)
-  }
-  const onChangeApplicationText = (event) => {
-    setApplicationText(event.target.value)
-  }
-  const onChangeProfession = (event) => {
-    setProfession(event.target.value)
-  }
-  const onChangeCountry = (event) => {
-    setCoutry(event.target.value)
-  }
-
-  const onSubmitForm = () => {
-    console.log(name, age, applicationText, profession, country)
+  const onSubmitForm = (event) => {
+    event.preventDefault()
+    console.log(form)
     const body = {
-      name: name,
-      age: age,
-      applicationText: applicationText,
-      profession: profession,
-      country: country
+      name: form.name,
+      age: form.age,
+      applicationText: form.applicationText,
+      profession: form.profession,
+      country: form.country
     }
-    axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/jaqueline-lourenco-Molina/trips/id/apply`,body)
+    axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/jaqueline-lourenco-Molina/trips/${form.trip.id}/apply`,body)
       .then((response) => {
         alert("Successfully Enrolled!")
         console.log(response.data)
@@ -66,39 +58,61 @@ export default function ApplicationForm () {
           <button onClick={goToListTrips}>List</button>
         </div>
       </GlobalStyled>
-      <Input>
-        <input
-          placeholder="Name"
-          type="name"
-          value={name}
-          onChange={onChangeName}
+      <Container onSubmit={onSubmitForm}>
+        <TextField
+          placeholder={"Name user"}
+          value={form['name']}
+          onChange={onChangeInput}
+          name={"name"}
         />
-        <input
-          placeholder="Age"
-          type="age"
-          value={age}
-          onChange={onChangeAge}
+        <TextField
+          label= {"Age"}
+          type={"number"}
+          value={form ["age"]}
+          onChange={onChangeInput}
+          name={"age"}
         />
-        <input
-          placeholder="Describe Interest?"
-          type="describe"
-          value={applicationText}
-          onChange={onChangeApplicationText}
+        <TextField
+          label={"Text application"}
+          helper= "Describe Interest?"
+          value={form["applicationText"]}
+          onChange={onChangeInput}
+          name={"applicaionText"}
         />
-        <input
-          placeholder="Profession"
-          type="profession"
-          value={profession}
-          onChange={onChangeProfession}
+        <TextField
+          label={"Profession"}
+          value={form ["profession"]}
+          onChange={onChangeInput}
+          name={"profession"}
         />
-        <input
-          placeholder="Country"
-          type="country"
-          value={country}
-          onChange={onChangeCountry}
-        />
+        <FormControl>
+          <InputLabel>Countries</InputLabel>
+          <Select
+            labelId="select-countries"
+            value={form["country"]}
+            onChange={onChangeInput}
+            name={"country"}
+          >
+            <MenuItem value={"brasil"}>Brasil</MenuItem>
+            <MenuItem value={"africa"}>Africa</MenuItem>
+            <MenuItem value={"eua"}>Estados Unidos</MenuItem>
+          </Select>
+        </FormControl>
+        <FormControl>
+          <InputLabel>Trips</InputLabel>
+          <Select
+            labelId="select-trips"
+            onChange={onChangeInput}
+            value={form["trip"]}
+            name={"trip"}
+          >
+            {trips.map((trip) => {
+            return <MenuItem value={trip}>{trip.name}</MenuItem>
+            })}
+          </Select>
+        </FormControl>
         <button onClick={onSubmitForm}>Sign Up</button>
-      </Input>
+        </Container>
     </div>
   );
 }

@@ -30,3 +30,10 @@ export const Input = styled.div`
         margin: 10px;
     }
 `
+
+export const Container = styled.form`
+    display: grid;
+    justify-content: center;
+    gap: 25px;   
+    grid-template-columns: 400px;
+`

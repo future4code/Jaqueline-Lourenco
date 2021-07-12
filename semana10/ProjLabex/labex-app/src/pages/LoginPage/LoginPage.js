@@ -1,35 +1,34 @@
 import React, { useState } from 'react';
-import {GlobalStyled , Input} from '../../styled';
+import {GlobalStyled , Container} from '../../styled';
 import {useHistory} from 'react-router-dom';
+import {useForm} from '../../hooks/useForm'
 import Logo from '../../assets/logo.jpg';
 import axios from 'axios';
+import { TextField, Button } from '@material-ui/core';
 
 export default function Login () {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const history = useHistory()
-  
+  const [form, onChangeInput] = useForm({
+    email: '',
+    password: ''
+  })
+
   const goToHome = () => {
     history.push("/")
   }
-  const onChangeEmail = (event) => {
-    setEmail(event.target.value)
-  }
-  const onChangePassword = (event) => {
-    setPassword(event.target.value)
-  }
-  const onSubmitLogin = () => {
-    console.log(email, password)
+
+  const onSubmitLogin = (event) => {
+    event.preventDefault()
+    //console.log(form)
     const body = {
-      email: email,
-      password: password
+      email: form.email,
+      password: form.password
     }
     axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/jaqueline-lourenco-Molina/login',body)
       .then((response) => {
         alert("login Successfully!")
-        console.log(response.data.token)
-        localStorage.setItem('token', response.data.token )
+        //console.log(response.data.token)
+        window.localStorage.setItem('token', response.data.token )
         history.push("/adm")
       })
       .catch((error) => {
@@ -47,21 +46,23 @@ export default function Login () {
           <button onClick={goToHome}>Home</button>
         </div>  
       </GlobalStyled>
-      <Input>
-        <input
-          placeholder="E-mail"
-          type="email"
-          value={email}
-          onChange={onChangeEmail}
+      <Container>
+        <TextField
+        label={'Email'}
+        type={'email'}
+        onChange={onChangeInput}
+        value={form['email']}
+        name={'email'}
         />
-        <input
-          placeholder="Password"
-          type="password"
-          value={password}
-          onChange={onChangePassword}
+        <TextField
+        label={'Password'}
+        type={'password'}
+        onChange={onChangeInput}
+        value={form['password']}
+        name={'password'}
         />
         <button onClick={onSubmitLogin}>Login</button>
-      </Input>
+      </Container>
     </div>
   );
 }

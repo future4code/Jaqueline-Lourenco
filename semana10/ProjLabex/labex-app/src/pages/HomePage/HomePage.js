@@ -1,6 +1,6 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom'
-import {GlobalStyled} from "../../styled"
+import {ButtonContainer} from "./styled"
 import Logo from '../../assets/logo.jpg'
 
 export default function Home () {
@@ -15,14 +15,14 @@ export default function Home () {
 
   return (
     <div>
-      <GlobalStyled>
+      <ButtonContainer>
         <img src={Logo}/>
-        Home
+        Labex
         <div>
           <button onClick={goToLogin}>Login</button>
           <button onClick={goToListTrips}>Trips</button>
         </div>
-      </GlobalStyled>
+      </ButtonContainer>
     </div>
   );
 }
