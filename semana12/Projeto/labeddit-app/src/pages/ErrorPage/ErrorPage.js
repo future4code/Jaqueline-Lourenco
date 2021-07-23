@@ -6,7 +6,7 @@ const ErrorPage = () => {
     return(
         <ErrorPageContainer>
             <iframe src="https://giphy.com/embed/dsWOUTBz5aae8ET8Ss" 
-                width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen>
+                width="400" height="400" frameBorder="0" class="giphy-embed" allowFullScreen>
             </iframe>
         </ErrorPageContainer> 
     )

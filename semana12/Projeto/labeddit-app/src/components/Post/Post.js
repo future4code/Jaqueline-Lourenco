@@ -19,46 +19,48 @@ const DoPost = () => {
 
   return (
     
-    <form onSubmit={onSubmitComment}><Card width="200">
-      <CreatePostContainer>
-        <InputsContainer>
-          <TextField
-            name={"title"}
-            value={form.title}
-            onChange={onChange}
-            label={'Título'}
-            variant={'outlined'}
+    <form onSubmit={onSubmitComment}>
+      <Card width="200">
+        <CreatePostContainer>
+          <InputsContainer>
+            <TextField
+              name={"title"}
+              value={form.title}
+              onChange={onChange}
+              label={'Título'}
+              variant={'outlined'}
+              fullWidth
+              required
+              autoFocus
+              margin={'normal'}
+            />
+          </InputsContainer>
+          <InputsContainer>
+            <TextField
+              name={"body"}
+              value={form.body}
+              onChange={onChange}
+              label={'Texto'}
+              variant={'outlined'}
+              fullWidth
+              required
+              autoFocus
+              margin={'normal'}
+            />
+          </InputsContainer>
+          <ContainerButton>
+          <Button
+            color={'primary'}
+            variant={'contained'}
+            type={'submit'}
             fullWidth
-            required
-            autoFocus
-            margin={'normal'}
-          />
-        </InputsContainer>
-        <InputsContainer>
-          <TextField
-            name={"body"}
-            value={form.body}
-            onChange={onChange}
-            label={'Texto'}
-            variant={'outlined'}
-            fullWidth
-            required
-            autoFocus
-            margin={'normal'}
-          />
-        </InputsContainer>
-        <ContainerButton>
-        <Button
-          color={'primary'}
-          variant={'contained'}
-          type={'submit'}
-          fullWidth
-        >
-          {isLoading ? <CircularProgress /> : <>Publicar</>}
-        </Button>
-        </ContainerButton>
-      </CreatePostContainer>
-    </Card></form>
+          >
+            {isLoading ? <CircularProgress /> : <>Publicar</>}
+          </Button>
+          </ContainerButton>
+        </CreatePostContainer>
+      </Card>
+    </form>
     
   )
 }

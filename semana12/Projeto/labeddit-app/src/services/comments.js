@@ -2,7 +2,8 @@ import axios from 'axios'
 import {BASE_URL} from '../constants/urls'
 
 export const postVote = (url, vote)=>{
-    axios.post(url, {
+    axios
+    .post(url, {
       direction: Number(vote)
       }, {
       headers: {
@@ -36,7 +37,8 @@ export const changeVote = (url, vote)=>{
 
 
 export const deleteVote = (url)=>{
-  axios.delete(url, {
+  axios
+  .delete(url, {
     headers: {
       Authorization: localStorage.getItem("token")
     }

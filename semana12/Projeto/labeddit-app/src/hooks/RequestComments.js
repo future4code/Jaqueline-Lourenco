@@ -6,9 +6,10 @@ export const RequestComments =(initialData,id)=>{
     const [comments, setComments] = useState(initialData)
     
     useLayoutEffect(() => {
-    axios.get(`${BASE_URL}/posts/${id}/comments`, {headers: {
+    axios
+    .get(`${BASE_URL}/posts/${id}/comments`, {headers: {
         Authorization: localStorage.getItem('token')}
-      })
+    })
     .then((response)=>{
         setComments(response.data)
     })

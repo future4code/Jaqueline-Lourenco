@@ -32,10 +32,10 @@ export const StyledToolbar = styled(Toolbar)`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #EB0004;
+    background-color: #8F0002;
 
     button {
-        background-color: black;
+        background-color: #2e2d2b;
         color: white;
 
         :hover {
@@ -59,7 +59,6 @@ export const CreatePostContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 60vw;
-   /* min-width: 60%; */
   align-items: center;
   margin-bottom: 20px;
   margin-top: 30px;
@@ -68,7 +67,7 @@ export const ContainerButton = styled.div`
     width:10rem;
 
     Button {
-        background-color: black;
+        background-color: #8F0002;
         color: white;
 
         :hover {
@@ -83,7 +82,7 @@ export const PaginationContainer = styled.div`
 	justify-content: space-evenly;
     
     button {
-        background-color: red;
+        background-color: #8F0002;
         margin: 4px;
         width: 30px;
         border-radius: 15px;
