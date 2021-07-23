@@ -1,11 +1,13 @@
 import React from 'react';
-import { ErrorPageContainer, ErrorGif } from '../styled'
+import { ErrorPageContainer } from '../styled'
 
 const ErrorPage = () => {
 
     return(
         <ErrorPageContainer>
-            <ErrorGif src='https://media.giphy.com/media/UHAYP0FxJOmFBuOiC2/giphy.gif' />
+            <iframe src="https://giphy.com/embed/dsWOUTBz5aae8ET8Ss" 
+                width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen>
+            </iframe>
         </ErrorPageContainer> 
     )
 }

@@ -10,17 +10,17 @@ export const signUp = (
   setIsLoading
 ) => {
   axios
-    .post(`${BASE_URL}/users/signup`, body)
-    .then((res) => {
-      localStorage.setItem("token", res.data.token);
-      clear();
-      setIsLoading(false);
-      goToPosts(history);
-      setRightButtonText("Logout");
-    })
-    .catch((erro) => {
-      alert(erro.response.data);
-    });
+  .post(`${BASE_URL}/users/signup`, body)
+  .then((res) => {
+    localStorage.setItem("token", res.data.token);
+    clear();
+    setIsLoading(false);
+    goToPosts(history);
+    setRightButtonText("Logout");
+  })
+  .catch((erro) => {
+    alert(erro.response.data);
+  });
 };
 
 export const login = (
@@ -31,15 +31,15 @@ export const login = (
   setIsLoading
 ) => {
   axios
-    .post(`${BASE_URL}/users/login`, body)
-    .then((res) => {
-      localStorage.setItem("token", res.data.token);
-      clear();
-      setIsLoading(false);
-      goToPosts(history);
-      setRightButtonText("Logout");
-    })
-    .catch((erro) => {
-      alert(erro.response.data);
-    });
+  .post(`${BASE_URL}/users/login`, body)
+  .then((res) => {
+    localStorage.setItem("token", res.data.token);
+    clear();
+    setIsLoading(false);
+    goToPosts(history);
+    setRightButtonText("Logout");
+  })
+  .catch((erro) => {
+    alert(erro.response.data);
+  });
 };

@@ -12,9 +12,11 @@ function Pagination() {
             pageList.push(<button onClick = {() => setPage(i)}>{i}</button>)
             }
     }
-    return<PaginationContainer>
-        {pageList}
-    </PaginationContainer>
+    return(
+        <PaginationContainer>
+            {pageList}
+        </PaginationContainer>
+    )
 }
 
 export default Pagination

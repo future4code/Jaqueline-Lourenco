@@ -32,6 +32,17 @@ export const StyledToolbar = styled(Toolbar)`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: #EB0004;
+
+    button {
+        background-color: black;
+        color: white;
+
+        :hover {
+            background-color: #D64309;
+        
+        }
+    }
 `
 
 //Loading
@@ -54,13 +65,35 @@ export const CreatePostContainer = styled.div`
   margin-top: 30px;
 `
 export const ContainerButton = styled.div`
-width:10rem;
+    width:10rem;
+
+    Button {
+        background-color: black;
+        color: white;
+
+        :hover {
+            background-color: #D64309;
+        }
+    }
 `
 
 //Pagination
 export const PaginationContainer = styled.div`
 	display: inline;
 	justify-content: space-evenly;
+    
+    button {
+        background-color: red;
+        margin: 4px;
+        width: 30px;
+        border-radius: 15px;
+
+        :hover{
+            cursor: pointer;
+            background-color: #D64309;
+        }
+    }
+    
 `
 
 //Icons

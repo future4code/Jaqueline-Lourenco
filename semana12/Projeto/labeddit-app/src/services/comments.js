@@ -42,7 +42,7 @@ export const deleteVote = (url)=>{
     }
   })
   .then((res)=>{
-      alert(`voto apagado`)
+    alert(`voto apagado`)
   })
   .catch((erro)=>{
       alert(erro.response.data)
@@ -53,35 +53,36 @@ export const deleteVote = (url)=>{
 export const comment = (form, id, clear, setIsLoading) => {
   setIsLoading(true)
     axios.post(`${BASE_URL}/posts/${id}/comments`, {
-        body: form.body
+      body: form.body
     }, {
       headers: {
         Authorization: localStorage.getItem("token")
       }
     })
-      .then((res) => {
-        alert(res.data)
-        clear()
-        setIsLoading(false)
-      })
-      .catch((err) => {
-        alert(err.response.data.message)
-        setIsLoading(false)
-      })
+    .then((res) => {
+      alert(res.data)
+      clear()
+      setIsLoading(false)
+    })
+    .catch((err) => {
+      alert(err.response.data.message)
+      setIsLoading(false)
+    })
   }
 
   export const delComment = (id) =>{
     if (window.confirm("Deseja deletar este comentário?")) {
-        axios
-          .delete(`${BASE_URL}/comments/${id}/votes`, {
-            headers: {
-              Authorization: localStorage.getItem("token")
-          }})
-          .then((res) => {
-            alert("Comentário deletado !");
-            })
-          .catch((erro) => {
-            alert(erro.response.data.message);
-          });
-      }
+      axios
+      .delete(`${BASE_URL}/comments/${id}/votes`, {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      })
+      .then((res) => {
+        alert("Comentário deletado !");
+      })
+      .catch((erro) => {
+        alert(erro.response.data.message);
+      });
+    }
   }

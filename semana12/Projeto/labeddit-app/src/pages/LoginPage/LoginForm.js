@@ -50,7 +50,7 @@ const LoginForm = ({setRightButtonText}) => {
                     variant={"contained"}
                     color={"primary"}
                 >
-                    {isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Fazer Login</>}
+                    {isLoading ? <CircularProgress /> : <>Fazer Login</>}
                 </Button>
             </form>
         </LoginFormContainer>

@@ -14,11 +14,12 @@ const SignUpForm = ({setRightButtonText}) => {
 
   const onSubmitForm = (event) => {
     event.preventDefault()
+    alert ("Cadastro feito com Sucesso!")
     signUp(form, clear, history, setRightButtonText, setIsLoading)
   }
 
   return (
-    <form onSubmit={onSubmitForm}>{console.log(form)}
+    <form onSubmit={onSubmitForm}>
       <SignUpFormContainer>
         <InputsContainer>
           <TextField
@@ -63,7 +64,7 @@ const SignUpForm = ({setRightButtonText}) => {
           type={'submit'}
           fullWidth
         >
-          {isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Fazer Cadastro</>}
+          {isLoading ? <CircularProgress /> : <>Fazer Cadastro</>}
         </Button>
       </SignUpFormContainer>
     </form>

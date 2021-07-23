@@ -40,7 +40,7 @@ const CommentVotes = (props) => {
 
   return (
     <ContainerVotes>
-      Total de Votos:
+      Total Curtidas:
       {props.voteSum ? props.voteSum : 0}
       <HeartContainer
         onClick={() => onClickPositive(props.id, props.userVote)}

@@ -10,7 +10,7 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
-import logo from "../../assets/logo.jpeg";
+import logo from "../../assets/logo2.jpeg";
 import CommentIcon from "@material-ui/icons/Comment";
 import {
   ContainerComments,
@@ -103,24 +103,24 @@ const PostsCards = (props) => {
         <CardHeader
           avatar={
             <Avatar>
-              <img width="40px" src={logo} alt="logo" />
+              <img width="50px" src={logo} alt="logo" />
             </Avatar>
           }
-           subheader={props.title}
-          // title={UseDateTreatmentBr(props.createdAt)}
+          subheader={props.username}
+          //title={UseDateTreatmentBr(props.createdAt)}
         />
         <CardContent>
           <Typography variant="h6" color="textSecondary" align='center' component="p">
             {props.body} <br/>
-            </Typography>
+          </Typography>
           <Typography variant="h5" color="textSecondary" component="p">
-          🗣️{props.username}
+            🗣️{props.username}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
           <TargetContainer>
             <ContainerTotalVotes>
-              Total de Votos:
+              Total de Curtidas:
               {props.voteSum ? props.voteSum : 0}
             </ContainerTotalVotes>
             <ContainerVotes2>

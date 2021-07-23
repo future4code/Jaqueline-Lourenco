@@ -9,8 +9,8 @@ export const RequestComments =(initialData,id)=>{
     axios.get(`${BASE_URL}/posts/${id}/comments`, {headers: {
         Authorization: localStorage.getItem('token')}
       })
-    .then((res)=>{
-        setComments(res.data)
+    .then((response)=>{
+        setComments(response.data)
     })
     .catch((erro)=>{
         alert(erro.response.data.message)

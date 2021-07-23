@@ -26,8 +26,8 @@ const Header = ({rightButtonText, setRightButtonText}) => {
     return (
         <AppBar position="static">
             <StyledToolbar>
-                <Button onClick={() => goToPosts(history)} color="inherit">Labeddit</Button>
-                <Button onClick={rightButtonAction} color="inherit">{rightButtonText}</Button>
+                <Button onClick={() => goToPosts(history)}>Labeddit</Button>
+                <Button onClick={rightButtonAction}>{rightButtonText}</Button>
             </StyledToolbar>
         </AppBar>
     )

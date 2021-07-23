@@ -13,7 +13,7 @@ const LoginPage = ({setRightButtonText}) => {
     return (
         <ScreenContainer>
             <LogoImage src={logo} />
-            <h1>Solte-se, sua voz em palavras!</h1>
+            <h1>Seu App, Conecte-se!</h1>
             <LoginForm setRightButtonText={setRightButtonText}/>
             <SignUpButtonContainer>
                 <Button
