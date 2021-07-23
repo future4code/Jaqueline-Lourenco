@@ -1,13 +1,32 @@
-import React from 'react'
-import LockOpenIcon from '@material-ui/icons/LockOpen';
+import React from "react"
+import { ScreenContainer, LogoImage, SignUpButtonContainer } from "../styled"
+import logo from "../../assets/logo.jpeg"
+import Button from '@material-ui/core/Button'
+import LoginForm from "./LoginForm"
+import { useHistory } from 'react-router-dom'
+import {goToSignUp} from "../../Router/coordinator"
+import useUnprotectedPage from '../../hooks/useUnprotectedPage';
 
-export default function Login () {
+const LoginPage = ({setRightButtonText}) => {
+    useUnprotectedPage()
+    const history = useHistory()
     return (
-      <div>
-        
-        <h1>Login</h1>
-        <LockOpenIcon />
-  
-      </div>
-    );
+        <ScreenContainer>
+            <LogoImage src={logo} />
+            <h1>Solte-se, sua voz em palavras!</h1>
+            <LoginForm setRightButtonText={setRightButtonText}/>
+            <SignUpButtonContainer>
+                <Button
+                  onClick={() => goToSignUp(history)}
+                  type={"submit"}
+                  fullWidth
+                  variant={"text"}
+                >
+                  Não possui conta? Cadastre-se
+                </Button>
+            </SignUpButtonContainer>
+        </ScreenContainer>
+    )
 }
+
+export default LoginPage

@@ -1,13 +1,13 @@
-import React from 'react'
-import WarningIcon from '@material-ui/icons/Warning';
+import React from 'react';
+import { ErrorPageContainer, ErrorGif } from '../styled'
 
-export default function Error () {
-    return (
-      <div>
-        
-        <h1>Error</h1>
-        <WarningIcon />
-  
-      </div>
-    );
+const ErrorPage = () => {
+
+    return(
+        <ErrorPageContainer>
+            <ErrorGif src='https://media.giphy.com/media/UHAYP0FxJOmFBuOiC2/giphy.gif' />
+        </ErrorPageContainer> 
+    )
 }
+
+export default ErrorPage

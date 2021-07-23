@@ -1,13 +1,18 @@
 import React from 'react'
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import logo from '../../assets/logo.jpeg'
+import { ScreenContainer , LogoImage } from '../styled'
+import SignUpForm from './SingUpForms'
+import useUnprotectedPage from '../../hooks/useUnprotectedPage'
 
-export default function SingUp () {
-    return (
-      <div>
-        
-        <h1>Sing Up</h1>
-        <ExitToAppIcon />
-  
-      </div>
-    );
+const SignUpPage = ({setRightButtonText}) => {
+  useUnprotectedPage()
+  return (
+    <ScreenContainer>
+      <LogoImage src={logo}/>
+      <h1>Solte-se, sua voz em palavras!</h1>
+      <SignUpForm setRightButtonText={setRightButtonText}/>
+    </ScreenContainer>
+  )
 }
+
+export default SignUpPage

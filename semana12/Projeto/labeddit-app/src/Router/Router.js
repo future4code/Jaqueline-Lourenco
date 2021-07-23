@@ -5,21 +5,20 @@ import SignUpPage from '../pages/SingUpPage/SingUpPage'
 import PostPage from '../pages/PostPage/PostPage'
 import DetailsPage from '../pages/DetailsPage/DetailsPage'
 import ErrorPage from '../pages/ErrorPage/ErrorPage'
-
-export default function Router (/* {setRightButtonText} */) {
+export default function Router ({ setRightButtonText }) {
     return (
         <Switch>
             <Route exact path="/">
-                <PostsPage />
+                <PostPage />
             </Route>
             <Route exact path="/login">
-                <LoginPage />
+                <LoginPage setRightButtonText={setRightButtonText} />
             </Route>
             <Route exact path="/cadastro">
-                <SignUpPage />
+                <SignUpPage setRightButtonText={setRightButtonText} />
            </Route>
             <Route exact path="detalhes-post/:id">
-                <PostDetailPage />
+                <DetailsPage />
             </Route> 
             <Route>
                 <ErrorPage />
