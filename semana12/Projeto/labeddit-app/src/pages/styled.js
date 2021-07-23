@@ -63,6 +63,17 @@ export const InputsContainer = styled.div`
   align-items: center;
   margin-bottom: 20px;
   margin: red;
+
+  Button {
+    background-color: #2e2d2b;
+    color: white;
+
+    :hover {
+      background-color: #D64309;
+        
+    }
+    
+  }
 `
 export const LoginFormContainer = styled.div`
   display: flex;
@@ -109,6 +120,16 @@ export const SignUpFormContainer = styled.div`
   max-width: 450px;
   align-items: center;
   margin-bottom: 20px;
+
+  Button {
+    background-color: #2e2d2b;
+    color: white;
+
+    :hover {
+      background-color: #D64309;
+        
+    }
+  }
 `
 
 //ErrorPage

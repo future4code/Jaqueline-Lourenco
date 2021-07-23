@@ -59,7 +59,6 @@ const SignUpForm = ({setRightButtonText}) => {
           />
         </InputsContainer>
         <Button
-          color={'primary'}
           variant={'contained'}
           type={'submit'}
           fullWidth
