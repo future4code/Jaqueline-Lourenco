@@ -4,6 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 //Components //Comments
 export const HeartContainer = styled.div`
     cursor: pointer;
+    color: white;
 `
 export const ContainerVotes = styled.div`
     display: flex;
@@ -14,17 +15,27 @@ export const InputsContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 60vw;
-    max-width: 40rem;
+    max-width: 18rem;
     align-items: center;
     margin-bottom: 20px;
 `
 export const CreateCommentsContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 80vw;
-    max-width: 40rem;
+    width: 60vw;
+    max-width: 18rem;
     align-items: center;
     margin-bottom: 20px;
+
+    button {
+        background-color: #2e2d2b;
+        color: white;
+
+        :hover {
+            background-color: #D64309;
+        
+        }
+    }
 `
 
 //Header

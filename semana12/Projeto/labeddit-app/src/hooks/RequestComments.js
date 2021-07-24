@@ -14,7 +14,7 @@ export const RequestComments =(initialData,id)=>{
         setComments(response.data)
     })
     .catch((erro)=>{
-        alert(erro.response.data.message)
+        alert(erro.response.message)
     })
     },[id])
 

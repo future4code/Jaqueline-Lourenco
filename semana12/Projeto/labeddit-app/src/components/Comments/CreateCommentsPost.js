@@ -28,16 +28,14 @@ const CreateCommentsPosts = (props) => {
             fullWidth
             required
             autoFocus
-            margin={'normal'}
           />
         </InputsContainer>
         <Button
-          color={'primary'}
           variant={'contained'}
           type={'submit'}
           fullWidth
         >
-          {isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Comentar</>}
+          {isLoading ? <CircularProgress /> : <>Comentar</>}
         </Button>
       </CreateCommentsContainer>
     </form>

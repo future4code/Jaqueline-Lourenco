@@ -19,24 +19,27 @@ const Comments = (id)=>{
        
     const commentsList = comments && comments.map((comment)=>{
         localStorage.setItem('likeUser', comment.userVote);
-           return(
+        return(
         <div key={comment.id}>
             <hr/>
             <div>{comment.body}</div>
-             <div> ➡️{UseDateTreatmentBr(comment.createdAt)} </div>
-            <div> 🗣️{comment.username} </div>
+            <div> 
+                ➡️{UseDateTreatmentBr(comment.createdAt)} 
+            </div>
+            <div> 
+                🗣️{comment.username} 
+            </div>
             <CommentVotes userVote={comment.userVote}
             id={comment.id}
             voteSum={comment.voteSum}
             />
-           </div>
-            ) })
-
-
+        </div>
+    ) })
+    
     return(
         <div>
             {commentsList ? commentsList : <Typography paragraph>Nenhum comentário</Typography>}
-    </div>
+        </div>
 
     )
 }

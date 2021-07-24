@@ -11,7 +11,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import logo from "../../assets/logo2.jpeg";
-import CommentIcon from "@material-ui/icons/Comment";
+import CommentOutlinedIcon from '@material-ui/icons/CommentOutlined';
 import {
   ContainerComments,
   CardPostContainer,
@@ -143,7 +143,7 @@ const PostsCards = (props) => {
           </TargetContainer>
           <ContainerComments>
             {props.commentCount}
-            <CommentIcon />
+            <CommentOutlinedIcon />
           </ContainerComments>
           <IconButton
             className={clsx(classes.expand, {

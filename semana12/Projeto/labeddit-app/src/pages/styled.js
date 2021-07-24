@@ -6,6 +6,11 @@ export const ContainerComments = styled.div`
   justify-content: space-between;
   margin-top:3rem;
   margin-left: 4rem;
+  color: white;
+  
+  :hover {
+    cursor: pointer;
+  }
 `
 export const CardPostContainer = styled.div`
   .CardPost {
