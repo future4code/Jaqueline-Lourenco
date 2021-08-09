@@ -1,6 +1,6 @@
-let equation = process.argv[2]
-let number1 = Number( process.argv[3] )
-let number2 = Number( process.argv[4] )
+/*  let equation = process.argv[2]
+    let number1 = Number( process.argv[3] )
+    let number2 = Number( process.argv[4] )
 
 switch(equation){
     case "add":
@@ -20,4 +20,4 @@ switch(equation){
 
     default:
     console.log("Tente digitar uma das opção: add = soma, sub = subitrair, multi = multiplicar ou div = dividir")
-}
+} */
