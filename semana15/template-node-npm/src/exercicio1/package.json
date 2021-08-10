@@ -4,7 +4,7 @@
   "description": "",
   "main": "exercicio.js",
   "scripts": {
-    "start": "node /exercicio1/exercicio.js"
+    "start": "node ./exercicio.js"
   },
 
   "author": "Jaqueline Lourenco",

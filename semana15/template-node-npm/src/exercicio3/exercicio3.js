@@ -1,4 +1,4 @@
-/* let item = process.argv[2,3]
+ let item = process.argv[2]
 
 tarefas = [
     "Organizar casa", 
@@ -6,7 +6,7 @@ tarefas = [
 
 ]
 
-novasTarefas = [...tarefas]
+let novasTarefas =  [...tarefas, item]
 
 console.log("Tarefa adicionada com sucesso!")
-console.log(`Tarefas: ${novasTarefas.push(item)}`) */
+console.log(`Tarefas: ${novasTarefas}`)
