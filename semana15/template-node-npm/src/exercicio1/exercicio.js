@@ -16,7 +16,7 @@
     console.log(`Olá, ${nome}! Você tem ${age} anos`) */
 
 //c)
-/*  let nome = process.argv[2]
+    let nome = process.argv[2]
     let age = Number(process.argv[3])
 
-    console.log(`Olá, ${nome}! Você terá ${age+7} anos, daqui a 7 anos!`) */
+    console.log(`Olá, ${nome}! Você terá ${age+7} anos, daqui a 7 anos!`) 

@@ -6,7 +6,7 @@ tarefas = [
 
 ]
 
-novasTarefas = [...tarefas, item]
+novasTarefas = [...tarefas]
 
 console.log("Tarefa adicionada com sucesso!")
-console.log(`Tarefas: ${novasTarefas.toString()}`)
+console.log(`Tarefas: ${novasTarefas.push(item)}`)
