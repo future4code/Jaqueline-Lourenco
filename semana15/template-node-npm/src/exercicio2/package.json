@@ -4,7 +4,7 @@
   "description": "",
   "main": "exercicio2.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node /src/exercicio2/exercicio2.js"
   },
   "keywords": [],
   "author": "Jaqueline Lourenco",
