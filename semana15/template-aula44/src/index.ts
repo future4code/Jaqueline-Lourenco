@@ -64,6 +64,8 @@ let users: User[] = [
       age: 60
   }
 ]
+
+//Exrcícios
 app.get("/users", (req: Request, res: Response) => {
   try {
     let type = req.query.type as string
@@ -216,6 +218,12 @@ app.delete("/users/:id", (req: Request, res: Response) => {
   }
 })
 
+//Para testar se o servidor está tratando os endpoints corretamente
+
+app.get("/ping", (req: Request, res: Response) => {
+  res.status(200).send("pong!")
+})
+
 app.listen(3003, () => {
   console.log('Server is running at port 3003')
 })
@@ -286,7 +294,4 @@ app.get("/users", (req: Request, res: Response) => {
   }
 })
 
-// Para testar se o servidor está tratando os endpoints corretamente
-app.get("/ping", (req: Request, res: Response) => {
-  res.status(200).send("pong!")
 }) */
