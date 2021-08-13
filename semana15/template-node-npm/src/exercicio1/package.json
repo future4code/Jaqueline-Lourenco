@@ -1,0 +1,12 @@
+{
+  "name": "exercicio1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exercicio.js",
+  "scripts": {
+    "start": "node ./exercicio.js"
+  },
+
+  "author": "Jaqueline Lourenco",
+  "license": "ISC"
+}
