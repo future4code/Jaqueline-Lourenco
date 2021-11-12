@@ -3,7 +3,7 @@ import { accountUser } from './types'
 export const users: accountUser[] = [
     {
         name: "Jaqueline",
-        cpf: "428.998.725.22",
+        cpf: "42899872522",
         birthDay: "27/08/1994",
         balance: 350,
         clienteTransactions: [

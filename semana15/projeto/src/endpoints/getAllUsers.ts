@@ -15,7 +15,12 @@ export const getAllUsers = (
             codeError = 500
             throw new Error ("Bad requst! Please, try again later!")
         }
+        if (allUsers[0].cpf.length !== 11) {
+            codeError = 401
+            throw new Error ("CPF precisa ter 11 digitos!")
+        }
         res.status(200).send(allUsers)
+    
     }catch (error) {
         res.status(codeError).send({ message: error.message})
     }
